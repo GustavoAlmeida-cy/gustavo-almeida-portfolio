@@ -1,10 +1,23 @@
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ModeToggle";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
+    <nav className="flex justify-between items-center px-6 py-2 sticky top-0 left-0 bg-background/40 backdrop-blur-sm w-full z-50">
+      <Button type="button">
+        <Link href="#">Contato</Link>
+      </Button>
+
+      <div className="flex items-center gap-4 mr-10">
+        <Link href="#">Sobre mim</Link>
+        <Link href="#">Tecnologias</Link>
+        <Link href="#">Projetos</Link>
+      </div>
+
+      <ModeToggle />
+    </nav>
   );
 };
 
