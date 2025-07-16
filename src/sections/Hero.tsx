@@ -34,13 +34,13 @@ const Hero = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="flex z-30 flex-col h-140 w-140 text-left mx-8 text-white mt-6 md:mt-0"
       >
-        <h1 className="text-3xl md:text-8xl font-bold capitalize w-[80px] md:w-auto">
+        <h1 className="text-4xl md:text-8xl font-bold capitalize w-[100px] md:w-auto">
           {typedText}
           <span className="ml-1 animate-pulse text-[24px] md:text-[80px]">
             |
           </span>
         </h1>
-        <p className="text-1xl md:text-4xl font-semibold my-10  w-[200px] md:w-auto">
+        <p className="text-2xl md:text-4xl font-semibold my-6 md:my-10  w-[250px] md:w-auto">
           Sou desenvolvedor web focado em criar interfaces modernas,&nbsp;
           performáticas e intuitivas.
         </p>
