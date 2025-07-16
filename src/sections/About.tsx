@@ -4,12 +4,12 @@ const About = () => {
   return (
     <section
       id="about"
-      className="flex sm:flex-row flex-col justify-center items-center px-6 w-full h-[50vh] -mt-10 overflow-hidden"
+      className="flex sm:flex-row flex-col justify-center items-center p-6 w-full h-[100vh] -mt-10 overflow-hidden bg-background"
     >
-      <div className="flex flex-col flex-1 text-left ml-10 text-white max-w-2xl">
-        <h1 className="text-3xl font-bold">
+      <div className="flex flex-col flex-1 text-left ml-10 text-accent-foreground max-w-2xl">
+        <h2 className="text-3xl font-bold">
           Desenvolvo interfaces modernas e soluções completas
-        </h1>
+        </h2>
         <p className="text-xl font-semibold my-6 leading-relaxed">
           Sou desenvolvedor front-end dedicado a criar interfaces modernas,
           performáticas e intuitivas que conectam pessoas e tecnologia. Com foco

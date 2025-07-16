@@ -1,8 +1,7 @@
 import React from "react";
-import Navbar from "@/sections/Navbar";
 import Hero from "@/sections/Hero";
-import Footer from "@/sections/Footer";
 import About from "@/sections/About";
+import Highlights from "@/sections/Highlights";
 
 /**
  * Página inicial do site.
@@ -10,10 +9,9 @@ import About from "@/sections/About";
 const Home: React.FC = () => {
   return (
     <>
-      <Navbar />
       <Hero />
       <About />
-      <Footer />
+      <Highlights />
     </>
   );
 };
