@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import RoboticHandModel from "../components/models/hero/RoboticModel";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronsDown } from "lucide-react";
@@ -10,9 +9,9 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="flex sm:flex-row flex-col justify-between items-start mt-10 px-6 w-[100%] h-[100vh] overflow-hidden"
+      className="flex sm:flex-row flex-col justify-between items-start mt-10 px-6 w-[100%] h-[100vh] overflow-hidden relative"
     >
-      <div className="flex flex-col flex-1/2 h-140 text-left ml-10 text-white">
+      <div className="flex z-30 flex-col h-140 w-140 text-left mx-8 text-white">
         <h1 className="text-8xl font-bold capitalize">
           Construa experiências digitais
         </h1>
@@ -31,10 +30,6 @@ const Hero = () => {
           </Link>
         </Button>
       </div>
-
-      <figure className="hidden md:block">
-        <RoboticHandModel />
-      </figure>
     </section>
   );
 };
