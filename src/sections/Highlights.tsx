@@ -17,7 +17,7 @@ const Highlights = () => {
       className="flex justify-center items-center px-6 w-full overflow-hidden relative"
     >
       <SectionsHeader emoji="👨‍💻" title="Projetos em Destaque" top="top-15" />
-      <div className="flex md:flex-row flex-col justify-center items-center px-6 gap-12 mt-40">
+      <div className="flex xl:flex-row flex-col justify-center items-center px-6 gap-12 mt-40">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}

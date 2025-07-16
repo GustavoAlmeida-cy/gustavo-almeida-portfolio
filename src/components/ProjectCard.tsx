@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <div className="flex flex-col justify-start gap-4 items-center bg-background rounded-md w-[400px] h-[440px] overflow-hidden pb-2 shadow-md">
+    <div className="flex flex-col justify-start gap-4 items-center bg-card rounded-md w-[400px] h-[440px] overflow-hidden pb-2 shadow-md">
       <div className="relative w-full h-[240px]">
         <Image
           src={img_path}
