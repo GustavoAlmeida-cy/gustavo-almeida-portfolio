@@ -1,19 +1,42 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronsDown } from "lucide-react";
+import { motion } from "framer-motion";
+
+// Texto para o efeito de typing
+const typingText = "Construa experiências digitais";
 
 const Hero = () => {
+  const [typedText, setTypedText] = useState("");
+
+  // Efeito de typing
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedText(typingText.slice(0, i + 1));
+      i++;
+      if (i >= typingText.length) clearInterval(interval);
+    }, 60); // velocidade do typing
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="hero"
       className="flex sm:flex-row flex-col justify-between items-start mt-10 px-6 w-[100%] h-[100vh] overflow-hidden relative"
     >
-      <div className="flex z-30 flex-col h-140 w-140 text-left mx-8 text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="flex z-30 flex-col h-140 w-140 text-left mx-8 text-white mt-6 md:mt-0"
+      >
         <h1 className="text-8xl font-bold capitalize">
-          Construa experiências digitais
+          {typedText}
+          <span className="ml-1 animate-pulse text-[80px]">|</span>
         </h1>
         <p className="text-4xl font-semibold my-10">
           Sou desenvolvedor web focado em criar interfaces modernas,
@@ -29,7 +52,7 @@ const Hero = () => {
             <ChevronsDown className="mt-2 transition-transform duration-300 animate-bounce scale-140" />
           </Link>
         </Button>
-      </div>
+      </motion.div>
     </section>
   );
 };

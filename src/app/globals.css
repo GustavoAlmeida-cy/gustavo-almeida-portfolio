@@ -163,14 +163,16 @@
 }
 
 @layer components {
-  /* Underline elemente */
+  /* Underline element */
   .underline-element {
     @apply relative inline-block cursor-pointer;
+    --current-color: currentColor;
   }
 
   .underline-element::after {
     content: "";
-    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-accent-foreground transition-all duration-300 ease-out;
+    @apply absolute bottom-0 left-0 w-0 h-[2px] transition-all duration-300 ease-out;
+    background-color: var(--current-color);
   }
 
   .underline-element:hover::after {
