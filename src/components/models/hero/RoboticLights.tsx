@@ -1,7 +1,7 @@
 import React from "react";
 import * as THREE from "three";
 
-const HeroLights = () => {
+const RoboticLights = () => {
   return (
     <>
       {/* Luz ambiente para iluminação geral suave */}
@@ -119,4 +119,4 @@ const HeroLights = () => {
   );
 };
 
-export default HeroLights;
+export default RoboticLights;

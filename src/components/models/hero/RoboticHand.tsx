@@ -554,7 +554,7 @@ export function Model(props: ModelProps) {
   );
 }
 
-useGLTF.preload("/robotic_hand.glb");
+useGLTF.preload("/assets/models/robotic_hand.glb");
 
 // Exportar como padrão também para maior compatibilidade
 export default Model;

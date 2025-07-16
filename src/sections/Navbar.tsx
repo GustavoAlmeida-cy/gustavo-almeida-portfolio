@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-6 py-2 sticky top-0 left-0 bg-background/40 backdrop-blur-sm w-full z-50">
+    <nav className="flex justify-between items-center px-6 py-3 sticky top-0 left-0 bg-background/70 backdrop-blur-sm w-full z-50">
       <Button type="button">
         <Link href="#">Contato</Link>
       </Button>

@@ -1,7 +1,24 @@
 {
-  "name": "my-portfolio",
-  "version": "0.1.0",
+  "name": "gustavo-almeida-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "description": "Portfólio profissional de Gustavo Almeida, desenvolvedor front-end especializado em React, Next.js e experiências web modernas.",
+  "author": "Gustavo Almeida <seuemail@dominio.com>",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "gustavo almeida",
+    "desenvolvedor front-end",
+    "next.js",
+    "react",
+    "typescript",
+    "three.js",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seuusuario/gustavo-almeida-portfolio.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

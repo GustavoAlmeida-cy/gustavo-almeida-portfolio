@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import { Group } from "three";
-import HeroLights from "./HeroLights";
+import RoboticLights from "./RoboticLights";
 import Model from "./RoboticHand";
 
 const RotatingModel: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
@@ -20,16 +20,16 @@ const RotatingModel: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
   return (
     <group
       ref={rotatingGroup}
-      scale={isMobile ? 1.2 : 2}
-      position={[0, 7, 0]}
-      rotation={[0.8, 0.8, 0]} // ângulo inicial estilizado
+      scale={isMobile ? 1.2 : 1.6}
+      position={[0, 6, 0]}
+      rotation={[0.8, 0.8, -0.5]} // ângulo inicial estilizado
     >
       <Model />
     </group>
   );
 };
 
-const HeroExperience = () => {
+const RoboticHandModel = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1080px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
@@ -47,10 +47,10 @@ const HeroExperience = () => {
         maxPolarAngle={Math.PI / 2}
       />
 
-      <HeroLights />
+      <RoboticLights />
       <RotatingModel isMobile={isMobile} />
     </Canvas>
   );
 };
 
-export default HeroExperience;
+export default RoboticHandModel;

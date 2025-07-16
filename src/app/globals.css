@@ -120,4 +120,39 @@
     @apply bg-background text-foreground bg-no-repeat bg-cover bg-center backdrop-blur-sm;
     background-image: url("/assets/images/placeholder.jpg");
   }
+
+  /* Scrollbar para WebKit browsers (Chrome, Edge, Safari) */
+  ::-webkit-scrollbar {
+    width: 12px; /* largura da barra */
+    height: 12px; /* altura da barra horizontal */
+    background: transparent; /* fundo transparente */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: var(--radius-lg);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: var(--radius-lg);
+    border: 3px solid var(--background); /* cria efeito de "padding" entre thumb e track */
+    transition: background-color 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-foreground);
+  }
+
+  /* Scrollbar para Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--background);
+  }
+
+  /* Opcional: suavizar transição da cor da thumb no Firefox */
+  * {
+    transition: scrollbar-color 0.3s ease;
+  }
 }

@@ -1,8 +1,12 @@
-import Footer from "@/sections/Footer";
-import Hero from "@/sections/Hero";
+import React from "react";
 import Navbar from "@/sections/Navbar";
+import Hero from "@/sections/Hero";
+import Footer from "@/sections/Footer";
 
-export default function Home() {
+/**
+ * Página inicial do site.
+ */
+const Home: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -10,4 +14,6 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+
+export default Home;

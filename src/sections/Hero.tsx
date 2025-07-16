@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import HeroModel from "../components/models/hero/RoboticModel";
+import RoboticHandModel from "../components/models/hero/RoboticModel";
 
 const Hero = () => {
   return (
@@ -18,7 +18,7 @@ const Hero = () => {
       </div>
 
       <figure className="hidden md:block">
-        <HeroModel />
+        <RoboticHandModel />
       </figure>
     </section>
   );
