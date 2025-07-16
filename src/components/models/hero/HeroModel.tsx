@@ -13,7 +13,7 @@ const HeroExperience = () => {
   return (
     <Canvas
       camera={{ position: [0, 0, 15], fov: 45 }}
-      className="h-140! w-180!"
+      className="h-140! w-180! border-2 border-red-500"
     >
       <OrbitControls
         enablePan={false}
