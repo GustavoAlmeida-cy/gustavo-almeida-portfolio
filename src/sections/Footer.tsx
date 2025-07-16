@@ -13,16 +13,22 @@ const Footer = () => {
         <Link
           target="new _blank"
           href="https://github.com/GustavoAlmeida-cy"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 underline-element pb-2"
         >
           <FaGithub size={24} />
           <span>Github</span>
         </Link>
-        <Link href="#" className="flex items-center gap-2">
+        <Link
+          href="#"
+          className="flex items-center gap-2 underline-element pb-2"
+        >
           <FaLinkedin size={24} />
           <span>Linkedin</span>
         </Link>
-        <Link href="#" className="flex items-center gap-2">
+        <Link
+          href="#"
+          className="flex items-center gap-2 underline-element pb-2"
+        >
           <FaWhatsapp size={24} />
           <span>Whatsapp</span>
         </Link>

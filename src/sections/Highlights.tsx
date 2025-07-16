@@ -12,7 +12,7 @@ const Highlights = () => {
           img_path={"/assets/images/demos/demo_3d_shop.png"}
           title={"3D Shop"}
           description={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur, possimus rem dolore magnam."
+            "3D Shop é uma aplicação web moderna para exibir e vender teclados mecânicos com visualização interativa."
           }
           link={"https://github.com/GustavoAlmeida-cy/3D-Shop"}
         />
@@ -21,7 +21,7 @@ const Highlights = () => {
             img_path={"/assets/images/demos/demo_study.png"}
             title={"Study"}
             description={
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur, possimus rem dolore magnam."
+              "Study é uma plataforma web gratuita desenvolvida como projeto universitário com o propósito de promover a educação."
             }
             link={"https://github.com/GustavoAlmeida-cy/study-project"}
           />
@@ -30,7 +30,7 @@ const Highlights = () => {
           img_path={"/assets/images/demos/demo_memory_game.png"}
           title={"Jogo da Memória"}
           description={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur, possimus rem dolore magnam."
+            "Um projeto interativo de Jogo da Memória desenvolvido com componentes otimizados para acessibilidade e desempenho."
           }
           link={"https://github.com/GustavoAlmeida-cy/memory-game"}
         />
