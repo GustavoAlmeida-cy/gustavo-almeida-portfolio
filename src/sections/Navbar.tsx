@@ -6,15 +6,24 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-6 py-3 sticky top-0 left-0 w-full z-50 bg-gradient-to-b from-background/70 to-background/10 backdrop-blur-md">
+    <nav className="flex justify-between items-center px-6 py-3 sticky top-0 left-0 w-full z-50 bg-gradient-to-b from-background/70 to-background/30 backdrop-blur-md">
       <Button type="button">
         <Link href="#">Contato</Link>
       </Button>
 
       <div className="flex items-center gap-8 mr-10 font-semibold">
-        <Link href="#about">Sobre mim</Link>
-        <Link href="#highlights">Projetos</Link>
-        <Link href="#">Tecnologias</Link>
+        <Link href="#about" className="underline-div">
+          <span>Sobre mim</span>
+          <div />
+        </Link>
+        <Link href="#highlights" className="underline-div">
+          <span>Projetos</span>
+          <div />
+        </Link>
+        <Link href="#" className="underline-div">
+          <span>Tecnologias</span>
+          <div />
+        </Link>
       </div>
 
       <ModeToggle />

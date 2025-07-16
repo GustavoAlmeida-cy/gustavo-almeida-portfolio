@@ -126,6 +126,19 @@
     background-image: url("/assets/images/placeholder.jpg");
   }
 
+  /* Underline hover effect */
+  .underline-div {
+    @apply relative inline-flex flex-col items-center overflow-hidden; /* Necessário para posicionamento relativo e esconder o overflow */
+  }
+
+  .underline-div div {
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-accent-foreground transition-all duration-300 ease-out; /* Estado inicial: largura 0, transição */
+  }
+
+  .underline-div:hover div {
+    @apply w-full; /* Estado do hover: largura total */
+  }
+
   /* Scrollbar para WebKit browsers (Chrome, Edge, Safari) */
   ::-webkit-scrollbar {
     width: 12px; /* largura da barra */

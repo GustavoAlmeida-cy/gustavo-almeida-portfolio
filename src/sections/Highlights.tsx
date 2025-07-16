@@ -10,21 +10,21 @@ const Highlights = () => {
       <div className="flex md:flex-row flex-col justify-center items-center px-6 gap-12">
         <ProjectCard
           img_path={"/assets/images/placeholder.jpg"}
-          title={"Title"}
+          title={"Project 1"}
           description={
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur, possimus rem dolore magnam."
           }
         />
         <ProjectCard
           img_path={"/assets/images/placeholder.jpg"}
-          title={"Title"}
+          title={"Project 2"}
           description={
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur, possimus rem dolore magnam."
           }
         />
         <ProjectCard
           img_path={"/assets/images/placeholder.jpg"}
-          title={"Title"}
+          title={"Project 3"}
           description={
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur, possimus rem dolore magnam."
           }
