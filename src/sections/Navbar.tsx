@@ -12,21 +12,17 @@ const Navbar = () => {
       </Button>
 
       <div className="flex items-center gap-8 mr-10 font-semibold">
-        <Link href="#about" className="underline-div">
+        <Link href="#about" className="underline-element">
           <span>Sobre mim</span>
-          <div />
         </Link>
-        <Link href="#highlights" className="underline-div">
+        <Link href="#highlights" className="underline-element">
           <span>Destaques</span>
-          <div />
         </Link>
-        <Link href="#" className="underline-div">
+        <Link href="#" className="underline-element">
           <span>Projetos</span>
-          <div />
         </Link>
-        <Link href="#" className="underline-div">
+        <Link href="#" className="underline-element">
           <span>Tecnologias</span>
-          <div />
         </Link>
       </div>
 
