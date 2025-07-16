@@ -17,14 +17,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <div className="flex flex-col justify-start gap-4 items-center bg-background rounded-md w-[430px] h-[400px] overflow-hidden pb-2 shadow-md">
+    <div className="flex flex-col justify-start gap-4 items-center bg-background rounded-md w-[400px] h-[440px] overflow-hidden pb-2 shadow-md">
       <div className="relative w-full h-[240px]">
         <Image
           src={img_path}
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, 400px"
-          className="object-cover select-none"
+          className="object-contain select-none scale-90 rounded-md"
           priority
         />
       </div>

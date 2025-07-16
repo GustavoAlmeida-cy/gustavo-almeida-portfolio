@@ -53,7 +53,7 @@ const Projects = () => {
       id="projects"
       className="flex flex-col items-center px-4 w-full overflow-hidden relative py-12 mt-20"
     >
-      <SectionsHeader emoji="💻" title="Conheça meus trabalhos" />
+      <SectionsHeader emoji="💻" title="Conheça meus Trabalhos" />
 
       <div className="w-full max-w-7xl mt-40 px-2 sm:px-10 md:px-40">
         <Carousel opts={{ align: "start", loop: true }} className="w-full">
