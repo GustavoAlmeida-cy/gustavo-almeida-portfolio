@@ -1,11 +1,13 @@
+import SectionsHeader from "@/components/SectionsHeader";
 import React from "react";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="flex sm:flex-row flex-col justify-center items-center p-6 w-full h-[100vh] -mt-10 overflow-hidden bg-background"
+      className="flex sm:flex-row flex-col justify-center items-center p-6 w-full h-[100vh] -mt-8 overflow-hidden bg-background relative"
     >
+      <SectionsHeader emoji="🖐️" title="Apresentações" />
       <div className="flex flex-col flex-1 text-left ml-10 text-accent-foreground max-w-2xl">
         <h2 className="text-3xl font-bold">
           Desenvolvo websites modernos e soluções completas

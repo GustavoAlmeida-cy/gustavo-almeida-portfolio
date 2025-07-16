@@ -3,6 +3,7 @@
 import ProjectCard from "@/components/ProjectCard";
 import React from "react";
 import { motion } from "framer-motion";
+import SectionsHeader from "@/components/SectionsHeader";
 
 // Duração e atraso base para cada animação
 const CARD_ANIMATION_DURATION = 0.8;
@@ -36,9 +37,10 @@ const Highlights = () => {
   return (
     <section
       id="highlights"
-      className="flex justify-center items-center px-6 w-full overflow-hidden mt-20"
+      className="flex justify-center items-center px-6 w-full overflow-hidden relative"
     >
-      <div className="flex md:flex-row flex-col justify-center items-center px-6 gap-12">
+      <SectionsHeader emoji="👨‍💻" title="Projetos em destaque" />
+      <div className="flex md:flex-row flex-col justify-center items-center px-6 gap-12 mt-40">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
