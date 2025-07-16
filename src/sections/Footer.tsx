@@ -4,8 +4,8 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-center items-center p-6">
-      <div className="flex items-center gap-4">
+    <footer className="flex justify-center items-center p-6 mt-10">
+      <div className="flex items-center gap-4 font-semibold text-white">
         <Link href="#" className="flex items-center gap-2">
           <FaGithub size={24} />
           <span>Github</span>
