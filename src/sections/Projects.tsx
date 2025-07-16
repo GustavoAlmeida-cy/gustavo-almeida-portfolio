@@ -39,6 +39,13 @@ const Projects = () => {
         "Web Pong é uma implementação moderna do clássico jogo Pong usando tecnologias web nativas: JavaScript, CSS e HTML.",
       link: "https://github.com/GustavoAlmeida-cy/web-pong",
     },
+    {
+      img_path: "/assets/images/demos/demo_bin_calc.png",
+      title: "Calculadora Binária",
+      description:
+        "Esta é uma calculadora binária interativa desenvolvida em Python, com uma interface de terminal aprimorada.",
+      link: "https://github.com/GustavoAlmeida-cy/Binary-Calculator-Python",
+    },
   ];
 
   return (
