@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col justify-center items-center p-6 mt-10">
       {/* Links*/}
-      <div className="flex items-center gap-4 font-semibold text-white mb-6">
+      <div className="flex items-center gap-4 font-semibold text-white mb-6 text-sm">
         <Link
           target="new _blank"
           href="https://github.com/GustavoAlmeida-cy"

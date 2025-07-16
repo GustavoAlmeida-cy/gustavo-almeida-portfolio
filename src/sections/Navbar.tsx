@@ -11,7 +11,7 @@ const Navbar = () => {
         <Link href="#">Fale comigo</Link>
       </Button>
 
-      <div className="flex items-center gap-8 mr-10 font-semibold">
+      <div className="hidden md:flex items-center gap-8 mr-10 font-semibold">
         <Link href="#about" className="underline-element">
           <span>Sobre mim</span>
         </Link>

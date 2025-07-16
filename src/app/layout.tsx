@@ -61,7 +61,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      suppressHydrationWarning
+      className="w-screen h-screen p-0 m-0 overflow-x-clip!"
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
