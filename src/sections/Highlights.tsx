@@ -15,7 +15,7 @@ const Highlights = () => {
       img_path: "/assets/images/demos/demo_3d_shop.png",
       title: "3D Shop",
       description:
-        "3D Shop é uma aplicação web moderna para exibir e vender teclados mecânicos com visualização interativa.",
+        "3D Shop é uma aplicação web moderna para exibir e vender teclados mecânicos com visualização interativa com modelos 3D.",
       link: "https://github.com/GustavoAlmeida-cy/3D-Shop",
     },
     {

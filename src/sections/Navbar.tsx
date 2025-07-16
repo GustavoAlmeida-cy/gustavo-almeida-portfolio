@@ -18,7 +18,7 @@ const Navbar = () => {
         <Link href="#highlights" className="underline-element">
           <span>Destaques</span>
         </Link>
-        <Link href="#" className="underline-element">
+        <Link href="#projects" className="underline-element">
           <span>Projetos</span>
         </Link>
         <Link href="#" className="underline-element">

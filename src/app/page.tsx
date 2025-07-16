@@ -3,6 +3,7 @@ import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Highlights from "@/sections/Highlights";
 import RoboticHandModel from "@/components/models/hero/RoboticModel";
+import Projects from "@/sections/Projects";
 
 /**
  * Página inicial do site.
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
       <Hero />
       <About />
       <Highlights />
+      <Projects />
     </>
   );
 };
