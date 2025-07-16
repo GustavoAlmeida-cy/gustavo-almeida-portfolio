@@ -2,19 +2,34 @@
 
 import React from "react";
 import RoboticHandModel from "../components/models/hero/RoboticModel";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ChevronsDown } from "lucide-react";
 
 const Hero = () => {
   return (
     <section
       id="hero"
-      className="flex sm:flex-row flex-col justify-between items-start mt-12 px-6 w-[100%] h-[100vh] overflow-hidden"
+      className="flex sm:flex-row flex-col justify-between items-start mt-10 px-6 w-[100%] h-[100vh] overflow-hidden"
     >
       <div className="flex flex-col flex-1/2 h-140 text-left ml-10 text-white">
-        <h1 className="text-8xl font-bold">Construo experiências digitais</h1>
+        <h1 className="text-8xl font-bold capitalize">
+          Construa experiências digitais
+        </h1>
         <p className="text-4xl font-semibold my-10">
           Sou desenvolvedor web focado em criar interfaces modernas,
           performáticas e intuitivas.
         </p>
+        <Button
+          type="button"
+          className="group flex justify-center items-center gap-2 px-6 py-4 w-[280px] h-[60px] text-md font-black uppercase tracking-wide text-white bg-gradient-to-r from-background to-accent shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-accent-foreground/40 hover:opacity-95 cursor-pointer"
+        >
+          <Link href="#" className="flex items-center gap-2">
+            <ChevronsDown className="text-white mt-2 transition-transform duration-300 animate-bounce scale-140" />
+            Transforme sua ideia
+            <ChevronsDown className="text-white mt-2 transition-transform duration-300 animate-bounce scale-140" />
+          </Link>
+        </Button>
       </div>
 
       <figure className="hidden md:block">
