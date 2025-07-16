@@ -8,7 +8,7 @@ const About = () => {
     >
       <div className="flex flex-col flex-1 text-left ml-10 text-accent-foreground max-w-2xl">
         <h2 className="text-3xl font-bold">
-          Desenvolvo interfaces modernas e soluções completas
+          Desenvolvo websites modernos e soluções completas
         </h2>
         <p className="text-xl font-semibold my-6 leading-relaxed">
           Sou desenvolvedor front-end dedicado a criar interfaces modernas,

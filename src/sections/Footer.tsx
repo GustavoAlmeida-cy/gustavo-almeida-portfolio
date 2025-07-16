@@ -10,7 +10,11 @@ const Footer = () => {
     <footer className="flex flex-col justify-center items-center p-6 mt-10">
       {/* Links*/}
       <div className="flex items-center gap-4 font-semibold text-white mb-6">
-        <Link href="#" className="flex items-center gap-2">
+        <Link
+          target="new _blank"
+          href="https://github.com/GustavoAlmeida-cy"
+          className="flex items-center gap-2"
+        >
           <FaGithub size={24} />
           <span>Github</span>
         </Link>
@@ -52,6 +56,7 @@ const Footer = () => {
           </Link>
           .
         </p>
+
         <p className="mt-1">
           Foto por{" "}
           <Link

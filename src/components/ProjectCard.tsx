@@ -1,21 +1,24 @@
 import { MonitorCheck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface ProjectCardProps {
   img_path: string;
   title: string;
   description: string;
+  link: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   img_path,
   title,
   description,
+  link,
 }) => {
   return (
-    <div className="flex flex-col justify-between items-center bg-background rounded-2xl w-[400px] h-[400px] overflow-hidden pb-4 shadow-md">
-      <div className="relative w-full h-[200px]">
+    <div className="flex flex-col justify-start gap-4 items-center bg-background rounded-md w-[440px] h-[400px] overflow-hidden pb-2 shadow-md">
+      <div className="relative w-full h-[240px]">
         <Image
           src={img_path}
           alt={title}
@@ -31,6 +34,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <MonitorCheck />
           <span>{title}</span>
         </h3>
+        <Link
+          href={link}
+          className="underline-element animate-pulse text-sm my-1"
+          target="new _blank"
+        >
+          <span>{link}</span>
+        </Link>
         <p className="text-md">{description}</p>
       </div>
     </div>

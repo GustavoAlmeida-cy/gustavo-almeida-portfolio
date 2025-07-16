@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Group } from "three";
@@ -9,10 +9,32 @@ import Model from "./RoboticHand";
 
 const RotatingModel = () => {
   const rotatingGroup = useRef<Group>(null);
+  const velocityY = useRef(0);
+  const gravity = 0.002;
+  const bounceFactor = 0.3;
+  const groundY = 5;
+
+  // Dispara o pulo ao montar
+  useEffect(() => {
+    velocityY.current = 0.06;
+  }, []);
 
   useFrame((_, delta) => {
-    if (rotatingGroup.current) {
-      rotatingGroup.current.rotation.y += delta * 0.3;
+    if (!rotatingGroup.current) return;
+
+    // Rotação contínua
+    rotatingGroup.current.rotation.y += delta * 0.3;
+
+    // Física do pulo
+    velocityY.current -= gravity;
+    rotatingGroup.current.position.y += velocityY.current;
+
+    if (rotatingGroup.current.position.y <= groundY) {
+      rotatingGroup.current.position.y = groundY;
+      velocityY.current *= -bounceFactor;
+      if (Math.abs(velocityY.current) < 0.005) {
+        velocityY.current = 0;
+      }
     }
   });
 
@@ -20,7 +42,7 @@ const RotatingModel = () => {
     <group
       ref={rotatingGroup}
       scale={1.6}
-      position={[5, 5, 0]}
+      position={[5, groundY, 0]}
       rotation={[0.8, 0.8, -0.5]}
     >
       <Model />
