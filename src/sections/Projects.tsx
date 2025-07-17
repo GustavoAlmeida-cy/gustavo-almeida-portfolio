@@ -2,6 +2,7 @@
 
 import ProjectCard from "@/components/ProjectCard";
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { projects } from "../../public/constants/Projects";
 import SectionsHeader from "@/components/SectionsHeader";
@@ -18,6 +19,29 @@ const CARD_ANIMATION_DURATION = 0.6;
 const CARD_ANIMATION_DELAY = 0.3;
 
 const Projects = () => {
+  const [orientation, setOrientation] = useState<"horizontal" | "vertical">(
+    "horizontal"
+  );
+  const [itemsPerView, setItemsPerView] = useState(2);
+
+  useEffect(() => {
+    const updateLayout = () => {
+      const width = window.innerWidth;
+
+      if (width < 1024) {
+        setOrientation("vertical");
+        setItemsPerView(1);
+      } else {
+        setOrientation("horizontal");
+        setItemsPerView(1);
+      }
+    };
+
+    updateLayout();
+    window.addEventListener("resize", updateLayout);
+    return () => window.removeEventListener("resize", updateLayout);
+  }, []);
+
   return (
     <section
       id="projects"
@@ -25,17 +49,33 @@ const Projects = () => {
     >
       <SectionsHeader emoji="💻" title="Conheça meus Trabalhos" top="top-15" />
 
-      <div className="w-full max-w-7xl mt-40 px-2 sm:px-10 md:px-40">
-        <Carousel opts={{ align: "start", loop: true }} className="w-full">
-          <CarouselContent className="flex gap-8">
+      <div className="w-full max-w-[440px] mt-40 pr-3">
+        <Carousel
+          orientation={orientation}
+          opts={{ align: "start", loop: true }}
+          className="w-full"
+        >
+          <CarouselContent
+            className={`${
+              orientation === "vertical"
+                ? "flex-col h-[500px]"
+                : "flex-row gap-8"
+            }`}
+          >
             {projects.map((project, index) => (
               <CarouselItem
                 key={project.title}
-                className="basis-full sm:basis-3/4 md:basis-2/4"
+                className={
+                  orientation === "vertical"
+                    ? "basis-full"
+                    : itemsPerView === 2
+                    ? "basis-1/2"
+                    : "basis-full"
+                }
               >
                 <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{
                     duration: CARD_ANIMATION_DURATION,
                     delay: index * CARD_ANIMATION_DELAY,
