@@ -48,7 +48,7 @@ const Hero = () => {
           type="button"
           className="group flex justify-center items-center gap-2 px-6 py-4 w-[220px] md:w-[280px] h-[60px] text-xs md:text-md font-black uppercase tracking-wide text-accent-foreground bg-gradient-to-r from-background to-accent shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-accent-foreground/40 hover:opacity-95 cursor-pointer"
         >
-          <Link href="#" className="flex items-center gap-2">
+          <Link href="#highlights" className="flex items-center gap-2">
             <ChevronsDown className="mt-2 transition-transform duration-300 animate-bounce scale-120 md:scale-140" />
             Transforme sua ideia
             <ChevronsDown className="mt-2 transition-transform duration-300 animate-bounce scale-120 md:scale-140" />

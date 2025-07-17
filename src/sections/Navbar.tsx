@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center px-6 py-3 sticky top-0 left-0 w-full z-50 bg-gradient-to-b from-background/70 to-background/30 backdrop-blur-md">
       <Button type="button" className="font-bold tracking-wide cursor-pointer">
-        <Link href="#">Fale comigo</Link>
+        <Link href="#contact">Fale comigo</Link>
       </Button>
 
       <div className="hidden md:flex items-center gap-8 mr-10 font-semibold">
