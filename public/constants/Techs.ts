@@ -24,7 +24,7 @@ const expCards = [
   {
     logoPath: "/assets/images/logo3.png",
     title: "Estudos & Tecnologias Gerais",
-    date: "Linux, Windows, Python, Java, React Native",
+    date: "Linux, Windows, Python, Java, React Native, I.A.",
     responsibilities: [
       "Familiaridade com ambientes Linux e Windows para desenvolvimento e automação.",
       "Estudos em linguagens como Python e Java para expandir base de conhecimento técnico.",

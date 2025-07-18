@@ -15,6 +15,7 @@ const Contact = () => {
     message: "",
   });
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,20 +23,33 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
 
-    const subject = encodeURIComponent("Contato via site");
-    const body = encodeURIComponent(
-      `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`
-    );
+    try {
+      const response = await fetch("https://formspree.io/f/mvgqglrd", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Altere para o seu e-mail de destino
-    const mailtoLink = `mailto:gustavo.almeida.cy@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-
-    setSuccess(true);
-    setFormData({ name: "", email: "", message: "" });
+      if (response.ok) {
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Erro ao enviar mensagem. Tente novamente mais tarde.");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      alert("Erro ao enviar. Verifique sua conexão e tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -90,14 +104,18 @@ const Contact = () => {
               className="my-4"
             />
           </div>
-          <Button type="submit" className="w-full md:w-fit cursor-pointer">
-            Enviar Mensagem
+          <Button
+            type="submit"
+            className="w-full md:w-fit cursor-pointer"
+            disabled={loading}
+          >
+            {loading ? "Enviando..." : "Enviar Mensagem"}
           </Button>
 
           {success && (
             <div className="flex items-center gap-2 text-green-600 text-sm mt-2">
               <CheckCircle className="h-4 w-4" />
-              Cliente de e-mail aberto para envio!
+              Mensagem enviada com sucesso!
             </div>
           )}
         </form>
