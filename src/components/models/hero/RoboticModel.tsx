@@ -42,7 +42,7 @@ const RotatingModel = () => {
     <group
       ref={rotatingGroup}
       scale={1.6}
-      position={[5, groundY, 0]}
+      position={[6, groundY, 0]}
       rotation={[0.8, 0.8, -0.5]}
     >
       <Model />

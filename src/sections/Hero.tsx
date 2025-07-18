@@ -32,7 +32,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="flex z-30 flex-col h-140 w-140 text-left mx-8 text-white mt-6 md:mt-0"
+        className="flex z-30 flex-col h-140 w-140 text-left mx-8 text-white mt-6 md:mt-0 md:ml-14"
       >
         <h1 className="text-4xl md:text-8xl font-bold capitalize w-[100px] md:w-auto">
           {typedText}

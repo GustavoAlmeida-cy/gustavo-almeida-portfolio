@@ -19,14 +19,16 @@ const Footer = () => {
           <span>Github</span>
         </Link>
         <Link
-          href="#"
+          target="new _blank"
+          href="https://www.linkedin.com/in/gustavo-almeida-cy/"
           className="flex items-center gap-2 underline-element pb-2"
         >
           <FaLinkedin size={24} />
           <span>Linkedin</span>
         </Link>
         <Link
-          href="#"
+          target="_blank"
+          href="https://wa.me/5511984012675"
           className="flex items-center gap-2 underline-element pb-2"
         >
           <FaWhatsapp size={24} />

@@ -49,7 +49,7 @@ const Projects = () => {
     >
       <SectionsHeader emoji="💻" title="Conheça meus Trabalhos" top="top-15" />
 
-      <div className="w-full max-w-[440px] mt-40 pr-3">
+      <div className="w-full max-w-[440px] mt-40 pr-3 ml-2">
         <Carousel
           orientation={orientation}
           opts={{ align: "start", loop: true }}
