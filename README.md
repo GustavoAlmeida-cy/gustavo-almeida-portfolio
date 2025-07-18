@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Gustavo Almeida | Front-end Portfolio
 
-First, run the development server:
+## Demonstration
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+| Link to my portfolio: [https://gustavo-almeida-portfolio.vercel.app](https://gustavo-almeida-portfolio.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Portfolio Demo](./public/assets/images/demos/portfolio.png)  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## About
 
-## Learn More
+This is the professional portfolio of **Gustavo Almeida**, a front-end developer specialized in React, Next.js, and modern web technologies. It showcases projects, skills, and experiences focused on modern, accessible, and performant user interfaces.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js** (v15) with React 19 and TypeScript 5  
+- Styling with Tailwind CSS and animations using Framer Motion  
+- Three.js integration for 3D experiences  
+- Theme management with `next-themes` supporting **dark mode**  
+- Contact form protected by Google reCAPTCHA  
+- SEO optimized with Next.js 13+ metadata configuration  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Dark Mode**: automatic light/dark based on system preference, with manual toggle by the user.  
+- **Internationalization (i18n)**: planned support for multiple languages, currently focused on Portuguese (pt-BR) and English (en).  
+- Responsive, accessible navigation optimized for mobile and desktop devices.  
+- Advanced SEO with Open Graph, dynamic metadata, and tags for better ranking.  
+- Google reCAPTCHA integration to prevent spam in the contact form.
+
+---
+
+## How to run locally
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/yourusername/gustavo-almeida-portfolio.git
+   ```
+
+2. Install dependencies:  
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Setup environment variables in `.env.local`:  
+   ```
+   NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your-recaptcha-site-key
+   ```
+
+4. Start development server:  
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Deployment
+
+This project can be easily deployed to platforms like Vercel, Netlify, or any Next.js-compatible environment.
+
+---
+
+## Contributions
+
+This is a personal portfolio repository, but contributions and suggestions are welcome!  
+Please open issues to report bugs or discuss improvements.
+
+---
+
+## License
+
+MIT License © 2025 Gustavo Almeida
