@@ -7,6 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const SITE_KEY = "6LdU-4crAAAAAIgJXCKFpCn1qzMPn9I2uEIVtOU5";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +17,12 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState<string | null>(null);
+
+  const recaptchaRef = React.useRef<ReCAPTCHA>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,8 +30,28 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const validateFields = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return (
+      formData.name.trim() !== "" &&
+      emailRegex.test(formData.email) &&
+      formData.message.trim() !== ""
+    );
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!validateFields()) {
+      alert("Preencha todos os campos corretamente.");
+      return;
+    }
+
+    if (!captchaVerified) {
+      alert("Por favor, confirme o reCAPTCHA.");
+      return;
+    }
+
     setLoading(true);
     setSuccess(false);
 
@@ -41,12 +68,16 @@ const Contact = () => {
       if (response.ok) {
         setSuccess(true);
         setFormData({ name: "", email: "", message: "" });
+        setCaptchaVerified(null);
+        if (recaptchaRef.current) {
+          recaptchaRef.current.reset();
+        }
       } else {
         alert("Erro ao enviar mensagem. Tente novamente mais tarde.");
       }
     } catch (error) {
       console.error("Erro ao enviar:", error);
-      alert("Erro ao enviar. Verifique sua conexão e tente novamente.");
+      alert("Erro ao enviar. Verifique sua conexão.");
     } finally {
       setLoading(false);
     }
@@ -104,10 +135,18 @@ const Contact = () => {
               className="my-4"
             />
           </div>
+
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={SITE_KEY}
+            onChange={(token) => setCaptchaVerified(token)}
+            onExpired={() => setCaptchaVerified(null)}
+          />
+
           <Button
             type="submit"
-            className="w-full md:w-fit cursor-pointer"
-            disabled={loading}
+            className="w-full md:w-fit cursor-pointer mt-4"
+            disabled={loading || !captchaVerified}
           >
             {loading ? "Enviando..." : "Enviar Mensagem"}
           </Button>
