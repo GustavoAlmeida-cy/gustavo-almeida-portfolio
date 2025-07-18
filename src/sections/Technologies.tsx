@@ -68,11 +68,11 @@ const ExperienceCardItem: React.FC<ExperienceCardItemProps> = ({
       {/* Texto preparado para Tecnologias */}
       <div>
         <h2 className="text-xl sm:text-2xl font-semibold">{card.title}</h2>
-        <p className="my-2 text-sm sm:text-base text-white/70">
+        <p className="my-2 text-sm sm:text-base text-accent-foreground/70">
           {card.date} {/* Pode usar para versão ou nível */}
         </p>
         <p className="italic text-[#839cb5] text-sm">Principais habilidades</p>
-        <ul className="list-disc ms-4 mt-2 space-y-2 text-white/80 text-sm sm:text-base">
+        <ul className="list-disc ms-4 mt-2 space-y-2 text-accent-foreground/80 text-sm sm:text-base">
           {card.responsibilities.map((item) => (
             <li key={item}>{item}</li>
           ))}

@@ -28,8 +28,7 @@ This is the professional portfolio of **Gustavo Almeida**, a front-end developer
 
 ## Key Features
 
-- **Dark Mode**: automatic light/dark based on system preference, with manual toggle by the user.  
-- **Internationalization (i18n)**: planned support for multiple languages, currently focused on Portuguese (pt-BR) and English (en).  
+- **Dark Mode**: automatic light/dark based on system preference, with manual toggle by the user.   
 - Responsive, accessible navigation optimized for mobile and desktop devices.  
 - Advanced SEO with Open Graph, dynamic metadata, and tags for better ranking.  
 - Google reCAPTCHA integration to prevent spam in the contact form.
