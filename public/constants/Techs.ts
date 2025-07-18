@@ -1,38 +1,35 @@
 const expCards = [
   {
-    review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
     logoPath: "/assets/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    title: "Front-end & UI",
+    date: "React, Next.js, HTML, CSS, JS, TS, Tailwind",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Experiência sólida com React e Next.js para criação de SPAs performáticas.",
+      "Utilização avançada de TypeScript, JavaScript moderno e Tailwind CSS para interfaces escaláveis.",
+      "Criação de experiências ricas com animações usando Framer Motion e interações visuais com Three.js.",
+      "Design System utilizando ShadCN e aplicação de boas práticas de acessibilidade e responsividade.",
     ],
   },
   {
-    review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
     logoPath: "/assets/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    title: "Noções de Back-end",
+    date: "Node.js, Express, MySQL, PostgreSQL, MongoDB, Prisma, Docker",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Criação de APIs REST com Node.js e Express para integração com sistemas frontend.",
+      "Modelagem de bancos de dados relacionais (MySQL, PostgreSQL) e NoSQL (MongoDB).",
+      "Uso do ORM Prisma para gerenciamento e migração de dados.",
+      "Containerização de aplicações com Docker para ambientes isolados e reproduzíveis.",
     ],
   },
   {
-    review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
     logoPath: "/assets/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    title: "Estudos & Tecnologias Gerais",
+    date: "Linux, Windows, Python, Java, React Native",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Familiaridade com ambientes Linux e Windows para desenvolvimento e automação.",
+      "Estudos em linguagens como Python e Java para expandir base de conhecimento técnico.",
+      "Exploração de desenvolvimento mobile com React Native e consumo de APIs.",
+      "Comprometido com aprendizado contínuo para aprimorar habilidades full-stack.",
     ],
   },
 ];
