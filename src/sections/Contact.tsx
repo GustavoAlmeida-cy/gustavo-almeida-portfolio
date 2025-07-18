@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const SITE_KEY = "6LdU-4crAAAAAIgJXCKFpCn1qzMPn9I2uEIVtOU5";
+const SITE_KEY = process.env.NEXT_PUBLIC_SITE_KEY || "";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
