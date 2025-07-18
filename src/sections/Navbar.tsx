@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-6 py-3 sticky top-0 left-0 w-full z-50 bg-gradient-to-b from-background/70 to-background/30 backdrop-blur-md">
+    <nav className="flex justify-between items-center px-6 py-3 sticky top-0 left-0 w-full z-100 bg-gradient-to-b from-background/70 to-background/30 backdrop-blur-md">
       <Button type="button" className="font-bold tracking-wide cursor-pointer">
         <Link href="#contact">Fale comigo</Link>
       </Button>
