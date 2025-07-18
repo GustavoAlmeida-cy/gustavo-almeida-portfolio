@@ -9,27 +9,33 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 
+// Chave do reCAPTCHA obtida do .env (frontend precisa de NEXT_PUBLIC_)
 const SITE_KEY = process.env.NEXT_PUBLIC_SITE_KEY || "";
 
 const Contact = () => {
+  // Estado para dados do formulário
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  // Estados para controle de sucesso, loading e verificação do captcha
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState<string | null>(null);
 
+  // Referência para poder resetar o reCAPTCHA
   const recaptchaRef = React.useRef<ReCAPTCHA>(null);
 
+  // Atualiza os dados conforme o usuário digita
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Valida se os campos foram preenchidos corretamente
   const validateFields = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return (
@@ -39,6 +45,7 @@ const Contact = () => {
     );
   };
 
+  // Envia o formulário, após validação e captcha
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -69,9 +76,7 @@ const Contact = () => {
         setSuccess(true);
         setFormData({ name: "", email: "", message: "" });
         setCaptchaVerified(null);
-        if (recaptchaRef.current) {
-          recaptchaRef.current.reset();
-        }
+        recaptchaRef.current?.reset();
       } else {
         alert("Erro ao enviar mensagem. Tente novamente mais tarde.");
       }
@@ -136,6 +141,7 @@ const Contact = () => {
             />
           </div>
 
+          {/* reCAPTCHA do Google */}
           <ReCAPTCHA
             ref={recaptchaRef}
             sitekey={SITE_KEY}
@@ -151,6 +157,7 @@ const Contact = () => {
             {loading ? "Enviando..." : "Enviar Mensagem"}
           </Button>
 
+          {/* Mensagem de sucesso */}
           {success && (
             <div className="flex items-center gap-2 text-green-600 text-sm mt-2">
               <CheckCircle className="h-4 w-4" />
