@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionsHeader from "@/components/SectionsHeader";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,6 +28,20 @@ const Contact = () => {
   // Referência para poder resetar o reCAPTCHA
   const recaptchaRef = React.useRef<ReCAPTCHA>(null);
 
+  // Estado que controla se o reCAPTCHA deve ser exibido com base no tamanho da tela
+  const [showCaptcha, setShowCaptcha] = useState(true);
+
+  // Detecta se está em mobile para esconder o CAPTCHA
+  useEffect(() => {
+    const handleResize = () => {
+      setShowCaptcha(window.innerWidth >= 720); // tailwind 'sm' breakpoint
+    };
+
+    handleResize(); // verifica ao montar
+    window.addEventListener("resize", handleResize); // verifica em resize
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Atualiza os dados conforme o usuário digita
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -45,7 +59,7 @@ const Contact = () => {
     );
   };
 
-  // Envia o formulário, após validação e captcha
+  // Envia o formulário, após validação e captcha (se estiver habilitado)
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -54,7 +68,7 @@ const Contact = () => {
       return;
     }
 
-    if (!captchaVerified) {
+    if (showCaptcha && !captchaVerified) {
       alert("Por favor, confirme o reCAPTCHA.");
       return;
     }
@@ -141,22 +155,24 @@ const Contact = () => {
             />
           </div>
 
-          {/* reCAPTCHA do Google responsivo */}
-          <div className="w-full flex justify-center my-4">
-            <div className="transform scale-[0.85] sm:scale-[0.95] md:scale-100 origin-center">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={SITE_KEY}
-                onChange={(token) => setCaptchaVerified(token)}
-                onExpired={() => setCaptchaVerified(null)}
-              />
+          {/* reCAPTCHA do Google responsivo (visível apenas fora do mobile) */}
+          {showCaptcha && (
+            <div className="w-full flex justify-center my-4">
+              <div className="transform scale-[0.85] sm:scale-[0.95] md:scale-100 origin-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={SITE_KEY}
+                  onChange={(token) => setCaptchaVerified(token)}
+                  onExpired={() => setCaptchaVerified(null)}
+                />
+              </div>
             </div>
-          </div>
+          )}
 
           <Button
             type="submit"
             className="w-full md:w-fit cursor-pointer mt-4"
-            disabled={loading || !captchaVerified}
+            disabled={loading || (showCaptcha && !captchaVerified)}
           >
             {loading ? "Enviando..." : "Enviar Mensagem"}
           </Button>

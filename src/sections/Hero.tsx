@@ -37,7 +37,7 @@ const Hero = () => {
         {/* Título com efeito de typing e cursor piscante */}
         <h1 className="text-4xl md:text-8xl font-bold capitalize w-[100px] md:w-auto">
           {typedText}
-          <span className="ml-1 animate-pulse text-[24px] md:text-[80px]">
+          <span className="ml-2 animate-pulse text-[30px] md:text-[80px]">
             |
           </span>
         </h1>
