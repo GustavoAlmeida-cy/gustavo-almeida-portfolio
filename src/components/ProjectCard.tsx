@@ -43,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline-element animate-pulse text-sm my-1"
+          className="underline-element animate-pulse text-sm my-1 italic text-[#839cb5]"
         >
           <span>{link}</span>
         </Link>
