@@ -17,14 +17,14 @@ const Navbar = () => {
         <Link href="#about" className="underline-element">
           <span>Sobre mim</span>
         </Link>
+        <Link href="#technologies" className="underline-element">
+          <span>Tecnologias</span>
+        </Link>
         <Link href="#highlights" className="underline-element">
           <span>Destaques</span>
         </Link>
         <Link href="#projects" className="underline-element">
           <span>Projetos</span>
-        </Link>
-        <Link href="#technologies" className="underline-element">
-          <span>Tecnologias</span>
         </Link>
       </div>
 
