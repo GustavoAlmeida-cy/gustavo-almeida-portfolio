@@ -141,14 +141,17 @@ const Contact = () => {
             />
           </div>
 
-          {/* reCAPTCHA do Google */}
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey={SITE_KEY}
-            onChange={(token) => setCaptchaVerified(token)}
-            onExpired={() => setCaptchaVerified(null)}
-            className="scale-70 sm:scale-85 md:scale-95 flex items-center  justify-center"
-          />
+          {/* reCAPTCHA do Google responsivo */}
+          <div className="w-full flex justify-center my-4">
+            <div className="transform scale-[0.85] sm:scale-[0.95] md:scale-100 origin-center">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={SITE_KEY}
+                onChange={(token) => setCaptchaVerified(token)}
+                onExpired={() => setCaptchaVerified(null)}
+              />
+            </div>
+          </div>
 
           <Button
             type="submit"
