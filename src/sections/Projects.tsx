@@ -14,7 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Duração e atraso base para cada animação
+// Configurações para animação dos cards
 const CARD_ANIMATION_DURATION = 0.6;
 const CARD_ANIMATION_DELAY = 0.3;
 
@@ -24,6 +24,7 @@ const Projects = () => {
   );
   const [itemsPerView, setItemsPerView] = useState(2);
 
+  // Atualiza layout do carrossel conforme largura da janela
   useEffect(() => {
     const updateLayout = () => {
       const width = window.innerWidth;
@@ -33,7 +34,7 @@ const Projects = () => {
         setItemsPerView(1);
       } else {
         setOrientation("horizontal");
-        setItemsPerView(1);
+        setItemsPerView(1); // Aqui está fixado em 1, talvez queira 2 para telas maiores
       }
     };
 
@@ -47,8 +48,10 @@ const Projects = () => {
       id="projects"
       className="flex flex-col items-center px-4 w-full overflow-hidden relative py-12 mt-20"
     >
+      {/* Cabeçalho da seção */}
       <SectionsHeader emoji="💻" title="Conheça meus Trabalhos" top="top-15" />
 
+      {/* Carrossel de projetos */}
       <div className="w-full max-w-[440px] mt-40 pr-3 ml-2">
         <Carousel
           orientation={orientation}
@@ -95,6 +98,7 @@ const Projects = () => {
             ))}
           </CarouselContent>
 
+          {/* Controles do carrossel */}
           <CarouselPrevious className="cursor-pointer" />
           <CarouselNext className="cursor-pointer" />
         </Carousel>

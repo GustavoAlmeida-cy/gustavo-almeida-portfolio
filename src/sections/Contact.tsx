@@ -99,8 +99,8 @@ const Contact = () => {
         top="top-0 md:top-15"
       />
 
-      <div className="flex flex-col flex-1 text-left ml-0 text-accent-foreground max-w-md w-full bg-card p-8 rounded-md mt-20">
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="flex flex-col flex-1 text-left ml-0 text-accent-foreground max-w-md w-full bg-card p-8 rounded-md mt-20 shadow-2xl">
+        <form onSubmit={handleSubmit} className="space-y-6 overflow-hidden">
           <div>
             <Label htmlFor="name">Nome</Label>
             <Input
@@ -147,6 +147,7 @@ const Contact = () => {
             sitekey={SITE_KEY}
             onChange={(token) => setCaptchaVerified(token)}
             onExpired={() => setCaptchaVerified(null)}
+            className="scale-70 sm:scale-85 md:scale-95 flex items-center  justify-center"
           />
 
           <Button

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { projects } from "../../public/constants/Highlights";
 import SectionsHeader from "@/components/SectionsHeader";
 
-// Duração e atraso base para cada animação
+// Configurações para animação dos cards (duração e delay)
 const CARD_ANIMATION_DURATION = 0.8;
 const CARD_ANIMATION_DELAY = 0.3;
 
@@ -14,9 +14,12 @@ const Highlights = () => {
   return (
     <section
       id="highlights"
-      className="flex justify-center items-center px-6 w-full overflow-hidden relative"
+      className="flex justify-center items-center px-6 w-full overflow-hidden relative pb-4"
     >
+      {/* Cabeçalho da seção */}
       <SectionsHeader emoji="👨‍💻" title="Projetos em Destaque" top="top-15" />
+
+      {/* Cards animados dos projetos */}
       <div className="flex xl:flex-row flex-col justify-center items-center px-6 gap-12 mt-40">
         {projects.map((project, index) => (
           <motion.div
@@ -28,7 +31,7 @@ const Highlights = () => {
               delay: index * CARD_ANIMATION_DELAY,
               ease: "easeOut",
             }}
-            viewport={{ once: true, amount: 0.3 }} // ativa ao ver 30% do componente
+            viewport={{ once: true, amount: 0.3 }} // anima só uma vez ao aparecer 30% do card
           >
             <ProjectCard
               img_path={project.img_path}

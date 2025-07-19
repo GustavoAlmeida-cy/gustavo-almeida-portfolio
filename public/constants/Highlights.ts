@@ -1,3 +1,4 @@
+// Lista de projetos com imagem, título, descrição e link para repositório
 const projects = [
   {
     img_path: "/assets/images/demos/demo_3d_shop.png",

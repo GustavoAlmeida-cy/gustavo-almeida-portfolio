@@ -7,7 +7,10 @@ const About = () => {
       id="about"
       className="flex sm:flex-row flex-col justify-center items-center px-6 py-20 w-full overflow-hidden bg-background relative"
     >
+      {/* Cabeçalho da seção com emoji e título */}
       <SectionsHeader emoji="🖐️" title="Apresentações" top="top-0 md:top-15" />
+
+      {/* Conteúdo textual sobre o desenvolvedor */}
       <div className="flex flex-col flex-1 text-left ml-0 md:ml-10 text-accent-foreground max-w-2xl pt-0 md:pt-20">
         <h2 className="text-3xl font-bold">
           Desenvolvo websites modernos e soluções completas

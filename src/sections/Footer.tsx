@@ -4,11 +4,11 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear(); // Obtém o ano atual dinamicamente
+  const currentYear = new Date().getFullYear(); // Ano atual para copyright
 
   return (
     <footer className="flex flex-col justify-center items-center p-6 mt-10">
-      {/* Links*/}
+      {/* Links para redes sociais com ícones */}
       <div className="flex items-center gap-4 font-semibold text-accent-foreground mb-6 text-sm">
         <Link
           target="new _blank"
@@ -36,7 +36,7 @@ const Footer = () => {
         </Link>
       </div>
 
-      {/* Seção de Copyright */}
+      {/* Direitos autorais e créditos dos assets usados */}
       <div className="text-center text-sm text-gray-400">
         <hr />
         <p className="mt-4">

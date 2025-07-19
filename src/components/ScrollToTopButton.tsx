@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
+  // Controla visibilidade do botão conforme scroll vertical
   useEffect(() => {
     const handleScroll = () => {
       setVisible(window.scrollY > 200);
@@ -13,6 +14,7 @@ const ScrollToTopButton = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Rola suavemente para o topo da página
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -32,8 +34,9 @@ const ScrollToTopButton = () => {
             : "opacity-0 translate-y-6 pointer-events-none"
         }
       `}
-      style={{ willChange: "opacity, transform" }}
+      style={{ willChange: "opacity, transform" }} // Otimização para animações CSS
     >
+      {/* Ícone de seta para cima */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"

@@ -6,6 +6,7 @@ interface SectionsHeaderProps {
   top: string;
 }
 
+// Componente para cabeçalho estilizado de seção com emoji e título
 const SectionsHeader: React.FC<SectionsHeaderProps> = ({
   emoji,
   title,

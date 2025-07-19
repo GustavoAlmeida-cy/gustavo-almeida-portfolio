@@ -6,20 +6,20 @@ import { Button } from "@/components/ui/button";
 import { ChevronsDown } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Texto para o efeito de typing
+// Texto para animação de typing
 const typingText = "Construa experiências digitais";
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
 
-  // Efeito de typing
+  // Simula efeito de digitação para o texto
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
       setTypedText(typingText.slice(0, i + 1));
       i++;
       if (i >= typingText.length) clearInterval(interval);
-    }, 60); // velocidade do typing
+    }, 60);
     return () => clearInterval(interval);
   }, []);
 
@@ -34,16 +34,21 @@ const Hero = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="flex z-30 flex-col h-140 w-140 text-left mx-8 text-white mt-6 md:mt-0 md:ml-14"
       >
+        {/* Título com efeito de typing e cursor piscante */}
         <h1 className="text-4xl md:text-8xl font-bold capitalize w-[100px] md:w-auto">
           {typedText}
           <span className="ml-1 animate-pulse text-[24px] md:text-[80px]">
             |
           </span>
         </h1>
+
+        {/* Subtítulo descritivo */}
         <p className="text-2xl md:text-4xl font-semibold my-6 md:my-10  w-[250px] md:w-auto">
           Sou desenvolvedor web focado em criar interfaces modernas,&nbsp;
           performáticas e intuitivas.
         </p>
+
+        {/* Botão com animação que leva para a seção de destaques */}
         <Button
           type="button"
           className="group flex justify-center items-center gap-2 px-6 py-4 w-[220px] md:w-[280px] h-[60px] text-xs md:text-md font-black uppercase tracking-wide text-accent-foreground bg-gradient-to-r from-background to-accent shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-accent-foreground/40 hover:opacity-95 cursor-pointer"

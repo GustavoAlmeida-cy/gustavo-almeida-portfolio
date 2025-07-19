@@ -20,6 +20,7 @@ type ExperienceCardItemProps = {
   animated: boolean;
 };
 
+// Componente para exibir cada card da experiência com animação de entrada
 const ExperienceCardItem: React.FC<ExperienceCardItemProps> = ({
   card,
   index,
@@ -29,9 +30,9 @@ const ExperienceCardItem: React.FC<ExperienceCardItemProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-30% 0px" });
 
+  // Dispara callback quando o card fica visível na viewport, com delay calculado
   useEffect(() => {
     if (isInView) {
-      // Delay + duração menor para animação mais rápida
       const timeout = setTimeout(() => {
         onVisible();
       }, (0.1 + index * 0.1) * 1000 + 400);
@@ -49,7 +50,7 @@ const ExperienceCardItem: React.FC<ExperienceCardItemProps> = ({
       animate={animated ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.4, ease: "easeInOut", delay }}
     >
-      {/* Logo */}
+      {/* Logo da tecnologia/experiência */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={animated ? { opacity: 1, x: 0 } : {}}
@@ -65,11 +66,11 @@ const ExperienceCardItem: React.FC<ExperienceCardItemProps> = ({
         />
       </motion.div>
 
-      {/* Texto preparado para Tecnologias */}
+      {/* Conteúdo textual do card */}
       <div>
         <h2 className="text-xl sm:text-2xl font-semibold">{card.title}</h2>
         <p className="my-2 text-sm sm:text-base text-accent-foreground/70">
-          {card.date} {/* Pode usar para versão ou nível */}
+          {card.date} {/* Exemplo: período, versão ou nível */}
         </p>
         <p className="italic text-[#839cb5] text-sm">Principais habilidades</p>
         <ul className="list-disc ms-4 mt-2 space-y-2 text-accent-foreground/80 text-sm sm:text-base">
@@ -82,11 +83,13 @@ const ExperienceCardItem: React.FC<ExperienceCardItemProps> = ({
   );
 };
 
+// Componente principal que exibe a seção de tecnologias com timeline animada
 const Technologies: React.FC = () => {
   const timelineControls = useAnimation();
   const [cardsVisibleCount, setCardsVisibleCount] = useState(0);
   const totalCards = expCards.length;
 
+  // Atualiza progresso da linha da timeline conforme cards são visíveis
   useEffect(() => {
     if (cardsVisibleCount === 0) return;
 
@@ -103,6 +106,7 @@ const Technologies: React.FC = () => {
     });
   }, [cardsVisibleCount, totalCards, timelineControls]);
 
+  // Incrementa o contador de cards visíveis
   const handleCardVisible = () => {
     setCardsVisibleCount((prev) => Math.min(prev + 1, totalCards));
   };
@@ -119,7 +123,7 @@ const Technologies: React.FC = () => {
       />
 
       <div className="relative flex flex-col flex-1 max-w-3xl w-full pt-10 sm:pt-20">
-        {/* Linha da Timeline */}
+        {/* Linha vertical da timeline com animação de crescimento */}
         <motion.div
           className="absolute left-4.5 -mt-4 sm:mt-0 sm:left-20.5 w-1 bg-gradient-to-b from-[#81e0ff] via-[#76ae63] to-[#ffd026] z-0 rounded-2xl origin-top"
           initial={{ opacity: 0, scaleY: 0 }}
@@ -127,7 +131,7 @@ const Technologies: React.FC = () => {
           style={{ top: 80, bottom: 0 }}
         />
 
-        {/* Cards */}
+        {/* Lista de cards com animações sequenciais */}
         <div className="relative z-10 flex flex-col gap-14 sm:gap-20 pl-10 sm:pl-16">
           {expCards.map((card, index) => (
             <ExperienceCardItem

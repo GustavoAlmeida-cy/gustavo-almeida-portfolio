@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Metadados para SEO e Open Graph
 export const metadata: Metadata = {
   title: "Gustavo Almeida | Desenvolvedor Front-end",
   description:
@@ -45,14 +46,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    googleBot: { index: true, follow: true },
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({
@@ -75,6 +71,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* Layout padrão: navbar, conteúdo, rodapé e botão de scroll */}
           <Navbar />
           <main>{children}</main>
           <Footer />

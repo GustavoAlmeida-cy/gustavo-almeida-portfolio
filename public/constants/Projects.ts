@@ -1,3 +1,4 @@
+// Conjunto de projetos com imagem, título, descrição e link para repositórios GitHub
 const projects = [
   {
     img_path: "/assets/images/demos/demo_miv_kod.png",
