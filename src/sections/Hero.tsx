@@ -49,16 +49,18 @@ const Hero = () => {
         </p>
 
         {/* Botão com animação que leva para a seção de destaques */}
-        <Button
-          type="button"
-          className="group flex justify-center items-center gap-2 px-6 py-4 w-[220px] md:w-[280px] h-[60px] text-xs md:text-md font-black uppercase tracking-wide text-accent-foreground bg-gradient-to-r from-background to-accent shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-accent-foreground/40 hover:opacity-95 cursor-pointer"
-        >
-          <Link href="#highlights" className="flex items-center gap-2">
-            <ChevronsDown className="mt-2 transition-transform duration-300 animate-bounce scale-120 md:scale-140" />
-            Transforme sua ideia
-            <ChevronsDown className="mt-2 transition-transform duration-300 animate-bounce scale-120 md:scale-140" />
-          </Link>
-        </Button>
+        <Link href="#highlights">
+          <Button
+            type="button"
+            className="group flex justify-center items-center gap-2 px-6 py-4 w-[220px] md:w-[280px] h-[60px] text-xs sm:text-sm md:text-md font-black uppercase tracking-wide text-accent-foreground bg-gradient-to-r from-background to-accent shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-accent-foreground/40 hover:opacity-95 cursor-pointer"
+          >
+            <div className="flex items-center gap-2">
+              <ChevronsDown className="mt-2 transition-transform duration-300 animate-bounce scale-120 md:scale-140" />
+              Transforme sua ideia
+              <ChevronsDown className="mt-2 transition-transform duration-300 animate-bounce scale-120 md:scale-140" />
+            </div>
+          </Button>
+        </Link>
       </motion.div>
     </section>
   );

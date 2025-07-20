@@ -125,7 +125,7 @@ const Technologies: React.FC = () => {
       <div className="relative flex flex-col flex-1 max-w-3xl w-full pt-10 sm:pt-20">
         {/* Linha vertical da timeline com animação de crescimento */}
         <motion.div
-          className="absolute left-4.5 -mt-4 sm:mt-0 sm:left-20.5 w-1 bg-gradient-to-b from-[#81e0ff] via-[#76ae63] to-[#ffd026] z-0 rounded-2xl origin-top"
+          className="absolute left-4.5 -mt-4 sm:mt-1 sm:left-20.5 w-1 bg-gradient-to-b from-[#81e0ff] via-[#76ae63] to-[#ffd026] z-0 rounded-2xl origin-top"
           initial={{ opacity: 0, scaleY: 0 }}
           animate={timelineControls}
           style={{ top: 80, bottom: 0 }}
