@@ -28,7 +28,6 @@ const expCards = [
     responsibilities: [
       "Familiaridade com ambientes Linux e Windows para desenvolvimento e automação.",
       "Estudos em linguagens como Python e Java para expandir base de conhecimento técnico.",
-      "Exploração de desenvolvimento mobile com React Native e consumo de APIs.",
       "Comprometido com aprendizado contínuo para aprimorar habilidades full-stack.",
     ],
   },
